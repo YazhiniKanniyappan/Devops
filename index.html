@@ -3,10 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reverse Words</title>
+    <style>
+        body{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(239, 235, 235);
+        }
+        h1{
+            text-align: center;
+            color: rgb(255, 0, 153);
+            font-size: 3rem;
+        }
+        .main{
+             border: 2px solid black;
+             width: 40vw;
+             margin: 0 auto;
+             height: 40vh;
+             display: flex;
+             justify-content: space-evenly;
+             flex-direction: column;
+             border-radius: 10px;
+             background-color: rgb(255, 0, 153);
+        }
+        #btn{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: block;
+            width: 90px;
+            margin: 0 auto;
+            border-radius: 5px;
+            border: 1px solid rgb(10, 7, 183);
+            height: 30px;
+            font-size: large;
+            background-color: rgb(16, 151, 235);
+            color: white;
+        }
+        #input{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            width: 30vw;
+            height: 30px;
+            margin: 0 auto;
+            font-size: large;
+            border: 2px solid rgb(255, 0, 153);
+            text-align: center;
+            border-radius: 10px;
+        }
+        #result{
+            display: none;
+            text-align: center;
+            color: white;
+            border: 2px solid black;
+             width: 40vw;
+             margin: 0 auto;
+             height: 20vh;
+             margin-top: 10px;
+             border-radius: 10px;
+             background-color: rgb(255, 0, 153);
+        }
+    </style>
 </head>
 <body>
-  <h1>DevOps</h1>
-    
+    <h1>REVERSE A WORD</h1>
+    <div class="main">
+        <input id="input" type="text" placeholder="Enter the Word...">
+        <button id="btn" typt="button">Reverse</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        let revword = "";
+        const btn = document.getElementById("btn");
+        const res = document.getElementById("result");
+        function reverse(){
+        const word = document.getElementById("input").value;
+        if(word=== ""){
+            alert("Please enter a word")
+        }
+        if(word != ""){
+        for(let i=word.length-1; i>=0; i--)
+        {
+            revword+= word[i];
+        }
+        const html = `<h4>Reversed String: ${revword}<h4>`
+        res.innerHTML = html;
+        res.style.display = "block";
+        }}
+        btn.addEventListener('click', reverse);
+    </script>
 </body>
 </html>
